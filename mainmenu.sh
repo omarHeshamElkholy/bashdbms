@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+PS3="mysql>"
 echo "Welcome to the Database managment system!"
 
 select choice in "create database" "List database" "connect to databse" "drop database" "exit"

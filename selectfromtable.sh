@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+ls
 echo "Enter the table you wish to select from"
 read table
 if [ ! -f ./$table ]

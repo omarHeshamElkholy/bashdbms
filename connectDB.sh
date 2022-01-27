@@ -12,7 +12,7 @@ select choice in "create table" "List table" "Drop table" "Insert into table" "S
 do 
     case $choice in 
         "create table")
-			. ./createtable.sh 
+			. ../../createtable.sh 
 			;;
 		"List table") 
 			ls 
@@ -22,7 +22,7 @@ do
             ;;
 
  		"Insert into table")
-			. ./insertintotable.sh 
+			. ../../insertintotable.sh 
             ;;
 
         "Select from table")
@@ -38,7 +38,7 @@ do
             ;;        
 
         "Update table")
-			. ./updatetable.sh 
+			. ../../updatetable.sh 
             ;;       
         "exit")
             exit
