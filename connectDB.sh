@@ -5,7 +5,6 @@ if [ -d ./databases/$dbName ]
 then
 	cd databases/$dbName
     echo "you just connected to the database $dbName"
-    pwd
 else
 	echo "no such database"
 fi
@@ -31,9 +30,7 @@ do
             ;;
 
         "Show table")
-			echo "Enter table name you wish to view"
-            read tablename
-            cat $tablename 
+            . ../../showtable.sh    
             ;;    
 
         "Delete from table")
