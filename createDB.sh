@@ -9,7 +9,7 @@ fi
 read dbName
 if [ -d ./databases/$dbName ]
 then
-	echo " a database with the same name already exists"
+	echo "invalid database name"
 else
 	mkdir ./databases/$dbName
 	echo "$dbName database was created"

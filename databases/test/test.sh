@@ -25,7 +25,6 @@ then
 					echo $entry >> $list_tables
 		fi	
 	done
-	entry=""
 	echo done .
 else
 	echo not found this table name .

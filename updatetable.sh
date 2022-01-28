@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+re='^[0-9]+$'
 ls
 echo "Enter table name fot update"
 read table
@@ -16,16 +17,27 @@ else
 	else     
 		sed -i ''/$num/'d' $table
 		####
-		up=$(awk 'BEGIN {FS=":"} ; END{print NF-1}' $table)
-		for q in $(seq $up)
+		num2=$(awk 'BEGIN {FS=":"} ; END{print NF-1}' $table)
+		for n in $(seq $num2)
 		do
-		    echo Insert your data
-		    read anss
-
-		    echo $anss:>>filesystem
+			echo Insert your data
+			read ans
+			columnType=$(awk -v i="$n" -F: '{if(NR == i) print $2}' .$table)
+			if  [[ $columnType == "int" ]]
+			then 
+				if ! [[ $ans =~ $re  ]]
+				then
+					echo "entry needs to be an integer"
+					break
+				else
+               	 entry+=$ans:
+            	fi	
+			else
+            	        entry+=$ans:
+						echo $entry >> $table
+			fi	
 		done
-		cat filesystem | tr -d "[:space:]" | paste -sd' ' >>$table
-		rm filesystem
 		echo done .
+		entry=""
 	fi
 fi
