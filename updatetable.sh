@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+ls
 echo "Enter table name fot update"
 read table
 if [ ! -f $table ]

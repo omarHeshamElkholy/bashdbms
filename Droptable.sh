@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+ls
 echo "Enter table name you wish to delete"
             read tablename
             if [ -f $tablename ]

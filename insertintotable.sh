@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+ls
 echo enter table :
 read list_tables 
 if [ -f $list_tables ]
